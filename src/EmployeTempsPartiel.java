@@ -4,35 +4,20 @@
 public class EmployeTempsPartiel extends Employe {
 
     private double salaireHoraire;
-    private int heures;
+    final private int heures = 35;
 
-    public EmployeTempsPartiel(String nom, String fonction, double salaireHoraire, int heures) {
+    public EmployeTempsPartiel(String nom, String fonction, double salaireHoraire) {
         super(nom, fonction);
         this.salaireHoraire = salaireHoraire;
-        this.heures = heures;
-        setSalaire(calculeSalaires());
-
     }
 
-    public double getSalaireHoraire() {
-        return salaireHoraire;
-    }
 
-    public int getHeures() {
-        return heures;
-    }
+    //methode redefini pour calculer le salaire de lemployer partiel
 
-    public void setHeures(int heures) {
-        this.heures = heures;
-    }
 
-    public void setSalaireHoraire(double salaireHoraire) {
-        this.salaireHoraire = salaireHoraire;
+    @Override
+    public double calculSalaire() {
+        setSalaire(salaireHoraire * heures);
+        return getSalaire();
     }
-
-    //methode pour calcduler le salaire de lemployer partiel
-    private double calculeSalaires() {
-        return salaireHoraire * heures;
-    }
-
 }

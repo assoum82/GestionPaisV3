@@ -10,27 +10,14 @@ public class EmployePleinTemps extends Employe {
         super(non, fonction);
         this.salaireSemaine = salaireSemaine;
         this.prime = prime;
-        setSalaire(calculeSalaires());
     }
 
-    public double getPrime() {
-        return prime;
-    }
 
-    public double getSalaireSemaine() {
-        return salaireSemaine;
-    }
+    //methode redefini pour calculer le salaire de l'employer a plein temps
 
-    public void setPrime(double prime) {
-        this.prime = prime;
-    }
-
-    public void setSalaireSemaine(double salaireSemaine) {
-        this.salaireSemaine = salaireSemaine;
-    }
-
-    //methode pour calculer le salaire de l'employer a plein temps
-    private double calculeSalaires() {
-        return salaireSemaine * 4 + prime;
+    @Override
+    public double calculSalaire() {
+        setSalaire(salaireSemaine * 4 + prime);
+        return getSalaire();
     }
 }
