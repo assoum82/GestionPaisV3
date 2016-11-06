@@ -1,6 +1,4 @@
 
-import java.util.ArrayList;
-
 /**
  * Created by chawki on 28/10/16.
  */
