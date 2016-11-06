@@ -7,22 +7,20 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Employe> employes = new ArrayList<>(); //notre tab de type Employe
+        Interaction menu = new Interaction();
 
-        employes.add(new Employe("Chawki", "PDG", 150000)); //le premier objet du tab est de type Employe (class mere)
-        employes.add(new EmployePleinTemps("Mohammed", "Secretaire", 500, 1000));//le 2em objet est de type EmployePleintemp (class fille)
-        employes.add(new EmployeTempsPartiel("Isak", "Agent de securité ", 500));//le 3em objet est de type EmployeTempPLein (class fille)
+        //les employes de base
+        menu.getEmployes().add(new Employe("chawki", "PDG", 50000));
+        menu.getEmployes().add(new Employe("ibtissem", "secretaire", 25000));
+        menu.getEmployes().add(new EmployePleinTemps("yasmine", "comptable", 10000, 500));
+        menu.getEmployes().add(new EmployeTempsPartiel("imad", "garde", 25));
+        menu.getEmployes().add(new EmployeTempsPartiel("nesrine", "stagiere", 15));
 
 
-        /*
-        -affichage du cheque ( np: le salaire est calculer directement dans la methode afficheCheque() par lien d'heritage )
-        -la methode calculeSalaire() a ete redefini dans les class fille
-        -pour redefinire une methode (polymorphisme) il faut garder les meme parametre d'entré et modifiant seulement son bloc ou son type de sort
-          */
+        menu.menu();
 
-        for (int i = 0; i < employes.size(); i++) {
-            employes.get(i).afficheCheque();
-        }
+
 
     }
+
 }
